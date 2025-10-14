@@ -1,0 +1,27 @@
+﻿<Window x:Class="SimpleProjectStopwatch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleProjectStopwatch"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="JLionSoft Projektzeiterfassung" Height="450" Width="800">
+    <ui:NavigationView IsSettingsVisible="False"
+                       IsBackButtonVisible="Collapsed"
+                       SelectionChanged="NavigationView_SelectionChanged"
+                       Name="NavView"
+                       Padding="5"
+                       Initialized="NavView_Initialized">
+        <ui:NavigationView.MenuItems>
+            <ui:NavigationViewItem Content="Erfassung" 
+                                   Icon="Calendar"
+                                   Tag="Erfassung"/>
+            <ui:NavigationViewItem Content="Projekte" 
+                                   Icon="Library"
+                                   Tag="Projekte"/>
+        </ui:NavigationView.MenuItems>
+    </ui:NavigationView>
+    
+</Window>
