@@ -1,5 +1,6 @@
 ﻿using SimpleProjectStopwatch.Commands;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
@@ -35,15 +36,16 @@ namespace SimpleProjectStopwatch.Models
                 OnPropertyChanged(nameof(Duration));
             }
         }
-
+        [NotMapped]
         public TimeSpan Duration => (EndTime ?? DateTime.Now) - StartTime;
-        public string Description { get; set; }
-
+        public string? Description { get; set; }
+        [NotMapped]
         public ICommand EditDetails => new RelayCommand(o =>
         {
             var dialog = new Views.Dialogs.AETimeEntry(this);
             _ = dialog.ShowAsync();
         });
+        [NotMapped]
         public ICommand DeleteEntry => new RelayCommand(o =>
         {
             ObjectRepository.Database.DeleteTimeEntry(Id);

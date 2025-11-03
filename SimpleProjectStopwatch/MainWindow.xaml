@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True"
-        Title="JLionSoft Projektzeiterfassung" Height="450" Width="800">
+        Title="JLionSoft Projektzeiterfassung" Height="450" Width="800"
+        Icon="/Logo.png">
     <ui:NavigationView IsSettingsVisible="False"
                        IsBackButtonVisible="Collapsed"
                        SelectionChanged="NavigationView_SelectionChanged"
