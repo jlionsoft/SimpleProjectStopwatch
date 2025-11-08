@@ -20,6 +20,7 @@ namespace SimpleProjectStopwatch
         public MainWindow()
         {
             InitializeComponent();
+            NavView.Content = new Views.WelcomeScreen();
         }
 
         private void NavigationView_SelectionChanged(ModernWpf.Controls.NavigationView sender, ModernWpf.Controls.NavigationViewSelectionChangedEventArgs args)
@@ -50,7 +51,7 @@ namespace SimpleProjectStopwatch
 
         private void NavView_Initialized(object sender, EventArgs e)
         {
-            NavigationView_SelectionChanged((sender as NavigationView)!, null!);
+            //NavigationView_SelectionChanged((sender as NavigationView)!, null!);
         //    (sender as NavigationView)!.Header = "Zeiterfassung";
         //    (sender as NavigationView)!.Content = new Views.TimeEntryView();
         }

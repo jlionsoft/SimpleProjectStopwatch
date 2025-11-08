@@ -28,6 +28,11 @@
                             Command="{Binding CreateNew}"
                             HorizontalAlignment="Left"
                             Grid.Row="2"/>
+        <ui:HyperlinkButton Content="Schnellerstellung"
+                            Grid.Row="2"
+                            HorizontalAlignment="Right"
+                            Command="{Binding QuickCreate}"/>
+        
 
         <TextBlock Text="Letzte Zeiteinträge" 
                 Style="{StaticResource TitleTextBlockStyle}"

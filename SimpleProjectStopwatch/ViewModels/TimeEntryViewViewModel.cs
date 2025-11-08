@@ -40,6 +40,13 @@ namespace SimpleProjectStopwatch.ViewModels
             LoadTimeEntries();
         });
 
+        public ICommand QuickCreate => new RelayCommand(o =>
+        {
+            var dialog = new Views.Dialogs.AETimeEntry();
+            (dialog.DataContext as AETimeEntryViewModel).TimeEntry.StartTime = DateTime.Now;
+            (dialog.DataContext as AETimeEntryViewModel).Save.Execute(null);
+        });
+
         void LoadTimeEntries()
         {
             TimeEntries = new(ObjectRepository.Database.GetTimeEntries()

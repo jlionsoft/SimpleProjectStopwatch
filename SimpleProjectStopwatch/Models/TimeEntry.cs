@@ -14,8 +14,8 @@ namespace SimpleProjectStopwatch.Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         public int Id { get; set; }
-        public int ProjectId { get; set; }
-        public Project Project { get; set; }
+        public int? ProjectId { get; set; }
+        public Project? Project { get; set; }
 
         private DateTime startTime;
         public DateTime StartTime
@@ -39,6 +39,14 @@ namespace SimpleProjectStopwatch.Models
         [NotMapped]
         public TimeSpan Duration => (EndTime ?? DateTime.Now) - StartTime;
         public string? Description { get; set; }
+
+
+        public TimeEntry()
+        {
+
+        }
+
+
         [NotMapped]
         public ICommand EditDetails => new RelayCommand(o =>
         {
