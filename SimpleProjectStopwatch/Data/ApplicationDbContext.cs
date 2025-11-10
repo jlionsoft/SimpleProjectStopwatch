@@ -23,5 +23,13 @@ namespace SimpleProjectStopwatch.Data
         {
             optionsBuilder.UseSqlite($"Data Source={DBPath}");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Project>()
+                .HasMany(p => p.TimeEntries)
+                .WithOne(t => t.Project)
+                .HasForeignKey(t => t.ProjectId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

@@ -24,5 +24,4 @@
                                    Tag="Projekte"/>
         </ui:NavigationView.MenuItems>
     </ui:NavigationView>
-    
 </Window>
